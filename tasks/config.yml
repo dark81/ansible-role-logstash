@@ -6,9 +6,7 @@
     owner: root
     group: root
     mode: 0644
-  with_items:
-    - 01-beats-input.conf
-    - 30-elasticsearch-output.conf
+  with_items: "{{ logstash_configs }}"
   notify: restart logstash
 
 - name: Create Logstash filters.
